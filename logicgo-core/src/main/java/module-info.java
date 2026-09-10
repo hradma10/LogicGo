@@ -1,0 +1,88 @@
+module cz.logicgo.core {
+    requires org.slf4j;
+    requires static org.jetbrains.annotations;
+    requires com.fasterxml.jackson.annotation;
+    requires org.reflections;
+    requires java.desktop;
+    requires transitive jakarta.persistence;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.datatype.jsr310;
+
+    exports cz.logicgo.core.exceptions;
+    exports cz.logicgo.core.exceptions.game;
+    exports cz.logicgo.core.exceptions.parallel;
+
+    exports cz.logicgo.core.misc;
+    exports cz.logicgo.core.misc.annotations;
+    exports cz.logicgo.core.misc.dataStructures;
+    exports cz.logicgo.core.misc.interfaces;
+
+    exports cz.logicgo.core.misc.enums;
+    exports cz.logicgo.core.misc.enums.gameTypes;
+    exports cz.logicgo.core.misc.enums.gameTypes.bridge;
+    exports cz.logicgo.core.misc.enums.gameTypes.maze;
+    exports cz.logicgo.core.misc.enums.gameTypes.maze.directions;
+    exports cz.logicgo.core.misc.enums.gameTypes.shikaku;
+    exports cz.logicgo.core.misc.enums.gameTypes.sudoku;
+    exports cz.logicgo.core.misc.enums.hints;
+    exports cz.logicgo.core.misc.enums.keys;
+    exports cz.logicgo.core.misc.enums.keys.game;
+    exports cz.logicgo.core.misc.enums.keys.game.maze;
+    exports cz.logicgo.core.misc.enums.keys.game.sudoku;
+    exports cz.logicgo.core.misc.enums.settings;
+    exports cz.logicgo.core.misc.enums.settings.modes;
+
+    exports cz.logicgo.core.model.games.drawable.bounds;
+    exports cz.logicgo.core.gameClasses.sudoku.sudokuCells;
+    exports cz.logicgo.core;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures.cell;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures.grid;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures.gameModes;
+    exports cz.logicgo.core.entity.games.mazes;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures.helpers;
+    exports cz.logicgo.core.factoryInit.sudoku;
+    exports cz.logicgo.core.factoryInit.maze;
+    exports cz.logicgo.core.factoryInit.bridge;
+    exports cz.logicgo.core.factoryInit;
+    exports cz.logicgo.core.entity.user;
+    exports cz.logicgo.core.entity.games.shikaku;
+    exports cz.logicgo.core.entity.games.sudoku;
+    exports cz.logicgo.core.factoryInit.shikaku;
+    exports cz.logicgo.core.entity.games.bridges;
+    exports cz.logicgo.core.entity.games;
+    exports cz.logicgo.core.util.boardConverters;
+    exports cz.logicgo.core.gameClasses.maze.dataStructures.path;
+    exports cz.logicgo.core.gameClasses.bridge;
+    exports cz.logicgo.core.gameClasses.shikaku;
+    exports cz.logicgo.core.gameClasses.sudoku;
+    exports cz.logicgo.core.gameClasses.sudoku.wrappers;
+    exports cz.logicgo.core.builders.sudoku;
+    exports cz.logicgo.core.gameClasses.sudoku.modifiers;
+    exports cz.logicgo.core.gameClasses.viewers;
+    exports cz.logicgo.core.builders.bridge;
+    exports cz.logicgo.core.gameClasses.maze;
+    exports cz.logicgo.core.builders.maze;
+    exports cz.logicgo.core.builders.shikaku;
+    exports cz.logicgo.core.gameClasses.favorites;
+    exports cz.logicgo.core.entity.export;
+    exports cz.logicgo.core.entity.setting;
+    exports cz.logicgo.core.util;
+    exports cz.logicgo.core.gameClasses.keys;
+    exports cz.logicgo.core.gameClasses.export.gameTypes;
+    exports cz.logicgo.core.gameClasses.export;
+    exports cz.logicgo.core.gameClasses.sudoku.misc;
+    exports cz.logicgo.core.misc.formatter;
+
+    opens cz.logicgo.core.entity.games.bridges to org.hibernate.orm.core;
+    exports cz.logicgo.core.util.converters to org.hibernate.orm.core;
+    exports cz.logicgo.core.util.converters.settings to org.hibernate.orm.core;
+    opens cz.logicgo.core.gameClasses.sudoku.wrappers to com.fasterxml.jackson.databind;
+    opens cz.logicgo.core.entity.setting to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.games to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.export to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.games.mazes to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.user to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.games.shikaku to org.hibernate.orm.core;
+    opens cz.logicgo.core.entity.games.sudoku to org.hibernate.orm.core;
+}

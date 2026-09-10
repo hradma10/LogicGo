@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="cz.logicgo.ui.controllers.gameControllers.SolutionWindowController">
+    <children>
+        <Pane fx:id="pane" prefHeight="500.0" prefWidth="500.0" styleClass="canvas-pane">
+            <children>
+                <Canvas fx:id="clueCanvas" height="500.0" width="500.0"/>
+                <Canvas fx:id="canvas" height="500.0" width="500.0"/>
+            </children>
+        </Pane>
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</StackPane>

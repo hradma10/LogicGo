@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.exportControllers.exportTabs.ShikakuTabController">
+    <content>
+        <GridPane fx:id="shikakuGridPane" hgap="20" vgap="15" alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="130" minWidth="130"/>
+                <ColumnConstraints prefWidth="320" minWidth="200"/>
+            </columnConstraints>
+
+            <Label fx:id="shikakuTypeLabel" text="Typ:" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+            <ChoiceBox fx:id="shikakuTypeChoiceBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label fx:id="shikakuDifficultyLabel" text="Obtížnost:" style="-fx-font-weight: bold;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ChoiceBox fx:id="difficultyChoiceBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label fx:id="shikakuCountGamesLabel" text="Počet:" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                   GridPane.rowIndex="2"/>
+            <TextField fx:id="countGames" maxWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <CheckBox fx:id="sameDimensionCheckBox" text="Stejné rozměry" GridPane.columnIndex="1"
+                      GridPane.rowIndex="3"/>
+
+            <Label text="Šířka:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <Slider fx:id="widthSlider" min="1" max="25" value="7" blockIncrement="1" majorTickUnit="1"
+                        minorTickCount="0" snapToTicks="true" prefWidth="180"/>
+                <Label fx:id="widthValueLabel" text="7" style="-fx-font-weight: bold;"/>
+            </HBox>
+
+            <Label text="Výška:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <Slider fx:id="heightSlider" min="1" max="25" value="7" blockIncrement="1" majorTickUnit="1"
+                        minorTickCount="0" snapToTicks="true" prefWidth="180"/>
+                <Label fx:id="heightValueLabel" text="7" style="-fx-font-weight: bold;"/>
+            </HBox>
+            <Button fx:id="addButton" text="" onAction="#addToList"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                    maxWidth="Infinity">
+                <GridPane.margin>
+                    <Insets top="10.0"/>
+                </GridPane.margin>
+            </Button>
+        </GridPane>
+    </content>
+</ScrollPane>

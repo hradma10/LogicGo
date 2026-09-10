@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.exportControllers.exportTabs.BridgeTabController">
+    <content>
+        <GridPane fx:id="bridgeGridPane" hgap="20" vgap="15" alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="130" minWidth="130"/>
+                <ColumnConstraints prefWidth="320" minWidth="200"/>
+            </columnConstraints>
+
+            <ChoiceBox fx:id="bridgeTypeChoiceBox" maxWidth="Infinity"/>
+            <CheckBox fx:id="sameDimensionCheckBox"/>
+
+            <fx:define>
+                <Slider fx:id="widthSlider" min="8" max="23" value="8" blockIncrement="1" majorTickUnit="1"
+                        minorTickCount="0" snapToTicks="true" prefWidth="180"/>
+                <Label fx:id="widthValueLabel" text="8" style="-fx-font-weight: bold;"/>
+                <Slider fx:id="heightSlider" min="8" max="23" value="8" blockIncrement="1" majorTickUnit="1"
+                        minorTickCount="0" snapToTicks="true" prefWidth="180"/>
+                <Label fx:id="heightValueLabel" text="8" style="-fx-font-weight: bold;"/>
+            </fx:define>
+
+            <TextField fx:id="countGames" maxWidth="100"/>
+
+            <Button fx:id="addButton" text="Přidat" onAction="#addToList"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                    maxWidth="Infinity">
+                <GridPane.margin>
+                    <Insets top="10.0"/>
+                </GridPane.margin>
+            </Button>
+        </GridPane>
+    </content>
+</ScrollPane>

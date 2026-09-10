@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<StackPane styleClass="root-pane" xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="cz.logicgo.ui.controllers.screenControllers.RegisterController">
+    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefWidth="400.0" spacing="20.0" styleClass="register-card">
+        <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+        </padding>
+
+        <Label fx:id="newProfileLabel" styleClass="title-label">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0"/>
+            </VBox.margin>
+        </Label>
+
+        <VBox alignment="CENTER_LEFT" spacing="5.0">
+            <Label fx:id="nameLabel" styleClass="field-label"/>
+            <TextField fx:id="textFieldUsername" styleClass="input-field"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" spacing="5.0">
+            <Label fx:id="passwordLabel" styleClass="field-label"/>
+            <PasswordField fx:id="passwordFieldUser" styleClass="input-field"/>
+            <Label styleClass="text-muted" wrapText="true">
+                <font>
+                    <Font size="11.0"/>
+                </font>
+            </Label>
+
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" spacing="5.0">
+            <Label fx:id="asDefaultLabel" styleClass="field-label"/>
+            <CheckBox fx:id="setAsDefault"/>
+        </VBox>
+
+        <HBox alignment="CENTER" spacing="15.0">
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#goBack" styleClass="btn-secondary"
+                    text="Zrušit"/>
+            <Button fx:id="createButton" defaultButton="true" mnemonicParsing="false"
+                    onAction="#onCreateUserButtonClicked" styleClass="btn-primary"/>
+        </HBox>
+    </VBox>
+</StackPane>

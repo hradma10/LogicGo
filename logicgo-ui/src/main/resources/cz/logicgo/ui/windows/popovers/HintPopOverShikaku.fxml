@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox spacing="10" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.logicgo.ui.controllers.popover.HintPopOverShikakuController">
+
+    <Label style="-fx-font-weight: bolder;" text="Vyberte typ nápovědy"/>
+
+    <Label style="-fx-font-weight: bold;" text="Nápovědy"/>
+
+    <HBox fx:id="hintButtonBox" spacing="5.0"/>
+</VBox>

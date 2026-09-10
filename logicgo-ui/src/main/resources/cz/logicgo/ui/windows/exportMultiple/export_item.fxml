@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 5;" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.logicgo.ui.controllers.exportControllers.cart.ExportItemController">
+    <VBox HBox.hgrow="ALWAYS" spacing="2">
+        <Label fx:id="descriptionLabel" styleClass="label" style="-fx-font-weight: bold; -fx-font-size: 13px;"
+               text="Název hry"/>
+        <Label fx:id="detailsLabel" styleClass="label" style="-fx-font-size: 11px; -fx-text-fill: #666666;"
+               text="Detaily exportu"/>
+    </VBox>
+    <Button fx:id="removeButton" styleClass="button" text="✕"
+            style="-fx-background-color: #ffeded; -fx-text-fill: #d32f2f; -fx-border-color: #ffcdd2; -fx-padding: 2 8 2 8;"/>
+</HBox>

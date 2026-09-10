@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+
+<VBox spacing="20.0" styleClass="root"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.logicgo.ui.controllers.exportControllers.ExportMultipleGamesController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" styleClass="export-header" spacing="15">
+        <Label fx:id="titleLabel" styleClass="title-label, export-main-title"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonAction"
+                styleClass="btn-secondary, export-history-btn"/>
+    </HBox>
+
+    <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="20.0" HBox.hgrow="ALWAYS" styleClass="export-card">
+            <Label fx:id="configHeadingLabel" styleClass="export-heading"/>
+
+            <TabPane fx:id="gameTabPane" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                <tabs>
+                    <Tab fx:id="sudokuTab" text="Sudoku"/>
+                    <Tab fx:id="bridgeTab" text="Mosty"/>
+                    <Tab fx:id="mazeTab" text="Bludiště"/>
+                    <Tab fx:id="shikakuTab" text="Shikaku"/>
+                    <Tab fx:id="multiTab" text="Oblíbené"/>
+                </tabs>
+            </TabPane>
+
+            <Separator styleClass="export-separator"/>
+
+            <Label fx:id="documentHeadingLabel" styleClass="export-subheading"/>
+            <GridPane hgap="15" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints halignment="LEFT" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label fx:id="typeLabel" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ChoiceBox fx:id="previewTypeChoiceBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"/>
+
+                <Label fx:id="layoutLabel" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ChoiceBox fx:id="layoutChoiceBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+
+            <CheckBox fx:id="generateHelpCheckBox" styleClass="checkbox, export-help-checkbox"/>
+        </VBox>
+
+        <VBox spacing="15.0" prefWidth="360.0" minWidth="360.0" maxWidth="360.0">
+
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                <Label fx:id="cartHeadingLabel" styleClass="label, export-cart-title"/>
+                <ListView fx:id="exportListView" styleClass="list-view, export-cart-list" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS" alignment="CENTER" styleClass="export-card">
+                <StackPane fx:id="canvasContainer" VBox.vgrow="ALWAYS" minHeight="120" minWidth="120">
+                    <Canvas fx:id="canvas"/>
+                </StackPane>
+            </VBox>
+
+            <Button fx:id="okButton" onAction="#onMainActionClick" maxWidth="Infinity"
+                    styleClass="btn-primary, export-action-btn"/>
+        </VBox>
+
+        <VBox fx:id="historySidebar" managed="false" minWidth="500.0" prefWidth="500.0" spacing="15" visible="false"
+              styleClass="export-sidebar">
+            <Label fx:id="historyHeadingLabel" styleClass="export-heading"/>
+            <ListView fx:id="exportedListView" styleClass="dark-list-view" VBox.vgrow="ALWAYS"/>
+            <Pagination fx:id="pagination" maxPageIndicatorCount="5" styleClass="dark-pagination"/>
+        </VBox>
+    </HBox>
+</VBox>

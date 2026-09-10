@@ -1,0 +1,276 @@
+{
+  "sudoku": {
+    "title": "Sudoku",
+    "base": [
+      "Doplňte číslice do mřížky tak, aby se v každém řádku, sloupci a vyznačeném bloku vyskytovala každá číslice právě jednou."
+    ],
+    "variants": {
+      "custom_size": {
+        "title": "Sudoku různé velikosti",
+        "rules": [
+          "Mění velikost herní plochy. Např. u rozměru 16x16 se sada čísel rozšiřuje o písmena A–G."
+        ]
+      },
+      "classic": {
+        "title": "Klasické Sudoku",
+        "rules": [
+          "Standardní hra bez dodatečných pravidel."
+        ]
+      },
+      "patterned": {
+        "title": "Pattern sudoku",
+        "rules": [
+          "Obsahuje speciálně vyznačená políčka (např. hvězdu u Asterisk sudoku), ve kterých se čísla nesmějí opakovat."
+        ]
+      },
+      "irregular": {
+        "title": "Nepravidelné (Irregular) sudoku",
+        "rules": [
+          "Klasické čtvercové bloky jsou nahrazeny nepravidelnými regiony."
+        ]
+      },
+      "even_odd": {
+        "title": "Even-Odd sudoku",
+        "rules": [
+          "Využívá předem vyznačenou paritu: čtverec značí sudé číslo, kruh liché číslo."
+        ]
+      },
+      "consecutive": {
+        "title": "Consecutive sudoku",
+        "rules": [
+          "Bílé kolečko mezi poli znamená, že se jejich hodnoty liší přesně o 1. Chybějící kolečko tento vztah zakazuje."
+        ]
+      },
+      "greater_than": {
+        "title": "Greater than sudoku",
+        "rules": [
+          "Symboly nerovnosti (< a >) na hranicích buněk určují, které ze sousedních čísel je větší."
+        ]
+      },
+      "diagonal": {
+        "title": "Diagonální sudoku",
+        "rules": [
+          "Čísla se nesmějí opakovat ani na obou hlavních diagonálách."
+        ]
+      },
+      "kropki": {
+        "title": "Kropki sudoku",
+        "rules": [
+          "Bílé kolečko značí rozdíl o 1, černé kolečko dvojnásobek hodnoty (u čísel 1 a 2 mohou být oba typy). Absence kolečka oba tyto vztahy zakazuje."
+        ]
+      },
+      "offset": {
+        "title": "Sudoku-DG",
+        "rules": [
+          "Políčka jsou roz dělena do barevných skupin. V rámci jedné barvy se čísla nesmějí opakovat."
+        ]
+      },
+      "skyscraper": {
+        "title": "Skyscraper sudoku",
+        "rules": [
+          "Čísla po stranách udávají, kolik budov je z daného směru vidět. Hodnota v buňce značí výšku budovy (vyšší budova zakrývá všechny nižší za ní)."
+        ]
+      },
+      "vudoku": {
+        "title": "Vudoku",
+        "rules": [
+          "Obsahuje tvary písmene V přes 3 buňky. Hodnota na hrotu V musí odpovídat součtu, nebo rozdílu hodnot na jeho koncích."
+        ]
+      },
+      "between": {
+        "title": "Between sudoku",
+        "rules": [
+          "Čísla ležící na linii mezi dvěma kruhy musí mít hodnotu číselně obsaženou mezi hodnotami v koncových kruzích a na linii se nesmějí opakovat."
+        ]
+      },
+      "anti_knight": {
+        "title": "Anti-Knight",
+        "rules": [
+          "Políčka vzdálená o skok šachovým jezdcem (do L) nesmějí obsahovat stejnou číslici."
+        ]
+      },
+      "anti_king": {
+        "title": "Anti-King",
+        "rules": [
+          "Políčka, která se dotýkají úhlopříčně (skokem krále), nesmějí obsahovat stejnou číslici."
+        ]
+      },
+      "xv": {
+        "title": "XV Sudoku",
+        "rules": [
+          "Znak V na hranici buněk značí součet 5, znak X značí součet 10. Chybějící symbol tyto součty zakazuje."
+        ]
+      },
+      "anti_consecutive": {
+        "title": "Anti-Consecutive",
+        "rules": [
+          "Sousední políčka sdílející hranu nesmějí obsahovat po sobě jdoucí číslice."
+        ]
+      },
+      "anti_all": {
+        "title": "Anti-All",
+        "rules": [
+          "Kombinuje pravidla Anti-Consecutive, Anti-King a Anti-Knight."
+        ]
+      },
+      "sandwich": {
+        "title": "Sandwich sudoku",
+        "rules": [
+          "Čísla na okraji udávají součet hodnot ležících v daném řádku či sloupci mezi číslem 1 a nejvyšším možným číslem."
+        ]
+      },
+      "x_sums": {
+        "title": "X-sums",
+        "rules": [
+          "Číslo na okraji udává součet prvních N čísel v daném směru, kde N je hodnota v úplně první buňce."
+        ]
+      },
+      "killer": {
+        "title": "Killer sudoku",
+        "rules": [
+          "Vyznačené klece musí mít požadovaný součet a číslice se v nich nesmějí opakovat."
+        ]
+      },
+      "quadruples": {
+        "title": "Quadruples sudoku",
+        "rules": [
+          "Kruh na průsečíku čtyř políček obsahuje seznam čísel, která se v této čtveřici musí objevit."
+        ]
+      },
+      "group_sums": {
+        "title": "Group-sums sudoku",
+        "rules": [
+          "Kruh na průsečíku čtyř políček udává součet čísel v této čtveřici."
+        ]
+      },
+      "samurai": {
+        "title": "Samurai",
+        "rules": [
+          "Propojuje 5 mřížek 9x9 přes společné rohové bloky 3x3."
+        ]
+      },
+      "twodoku": {
+        "title": "Doubledoku",
+        "rules": [
+          "Propojuje 2 mřížky 9x9 přes společný blok 3x3."
+        ]
+      },
+      "cross": {
+        "title": "Cross",
+        "rules": [
+          "Propojuje mřížky do tvaru kříže přes společné bloky 3x3."
+        ]
+      },
+      "tripledoku": {
+        "title": "Tripledoku",
+        "rules": [
+          "Propojuje 3 mřížky 9x9 přes společné bloky 3x3."
+        ]
+      },
+      "columndoku": {
+        "title": "Columndoku",
+        "rules": [
+          "Propojuje mřížky 9x9 nad sebou přes společné bloky."
+        ]
+      },
+      "doubledoku": {
+        "title": "Doubledoku",
+        "rules": [
+          "Propojuje 2 mřížky 9x9 přes společný blok 3x3."
+        ]
+      }
+    }
+  },
+  "bridge": {
+    "title": "Mosty",
+    "base": [
+      "Spojte všechny ostrovy vodorovnými nebo svislými mosty do jediné souvislé sítě.",
+      "Mosty se nesmějí křížit navzájem ani s ostrovy.",
+      "Počet mostů vedoucích z ostrova musí odpovídat číslu na ostrově."
+    ],
+    "variants": {
+      "multiple": {
+        "title": "Vícenásobné mosty",
+        "rules": [
+          "Mezi dvěma ostrovy mohou vést více než obvyklé 2 mosty (např. 3 nebo 4)."
+        ]
+      }
+    }
+  },
+  "maze": {
+    "title": "Bludiště",
+    "base": [
+      "Najděte souvislou cestu ze startu do cíle bez překračování stěn."
+    ],
+    "variants": {
+      "classic": {
+        "title": "Klasické bludiště",
+        "rules": [
+          "Tradiční bludiště bez speciálních pravidel."
+        ]
+      },
+      "masked": {
+        "title": "Maskované bludiště",
+        "rules": [
+          "Herní plocha má tvar vybraného obrazce místo klasického obdélníku."
+        ]
+      },
+      "portal": {
+        "title": "Bludiště s portály",
+        "rules": [
+          "Obsahuje teleporty propojené mezi různými částmi bludiště."
+        ]
+      },
+      "walls": {
+        "title": "Průchozí zdi",
+        "rules": [
+          "Některé zdi lze prorazit. K dosažení cíle musíte projít přesný počet těchto zdí."
+        ]
+      },
+      "multi_level": {
+        "title": "Vícepatrové bludiště",
+        "rules": [
+          "Bludiště je rozděleno do několika pater spojených schodišti či přechody."
+        ]
+      },
+      "checkpoint": {
+        "title": "Sekvenční checkpointy",
+        "rules": [
+          "Před cílem musíte navštívit vyznačená stanoviště v přesně určeném pořadí."
+        ]
+      },
+      "wrap_around": {
+        "title": "Okrajové propojení",
+        "rules": [
+          "Vykročením z okraje bludiště se okamžitě objevíte na protilehlé straně."
+        ]
+      },
+      "pattern": {
+        "title": "Cesta se vzory",
+        "rules": [
+          "Pohyb je omezen sekvencí symbolů (vstupovat lze jen na pole odpovídající dalším krokům ve vzoru)."
+        ]
+      },
+      "exact_steps": {
+        "title": "Omezení počtu kroků",
+        "rules": [
+          "Do cíle musíte dorazit v přesně stanoveném počtu kroků."
+        ]
+      }
+    }
+  },
+  "shikaku": {
+    "title": "Shikaku",
+    "base": [
+      "Rozdělte mřížku na obdélníky tak, aby každý obsahoval právě jedno číslo udávající jeho celkovou plochu (počet buněk)."
+    ],
+    "variants": {
+      "liar": {
+        "title": "Lhářovo shikaku",
+        "rules": [
+          "Čísla v buňkách lžou — skutečná velikost obdélníku je vždy o 1 větší nebo o 1 menší než zobrazená nápověda."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<HBox fx:id="list_item" alignment="CENTER_LEFT" spacing="10.0" styleClass="history-item-card" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.logicgo.ui.controllers.listControllers.ExportedItemController">
+
+    <VBox alignment="CENTER" minWidth="50">
+        <ImageView fx:id="thumbnailView" fitHeight="50" fitWidth="50" preserveRatio="true"/>
+    </VBox>
+
+    <VBox alignment="CENTER_LEFT" spacing="3" HBox.hgrow="ALWAYS">
+        <Label fx:id="titleLabel" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #e0e0e0;"
+               wrapText="true"/>
+        <Label fx:id="infoLabel" styleClass="text-muted" style="-fx-font-size: 12px;" wrapText="true"/>
+    </VBox>
+
+    <VBox alignment="CENTER_RIGHT" spacing="5.0">
+        <Button fx:id="viewButton" styleClass="btn-secondary" style="-fx-font-size: 11px;"/>
+        <Button fx:id="deleteButton" styleClass="btn-delete" style="-fx-font-size: 11px;"/>
+    </VBox>
+</HBox>

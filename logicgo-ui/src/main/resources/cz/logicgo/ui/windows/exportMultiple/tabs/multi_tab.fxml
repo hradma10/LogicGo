@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.exportControllers.exportTabs.FavoriteTabController">
+    <content>
+        <GridPane fx:id="multiGridPane" hgap="20" vgap="15" alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="130" minWidth="130"/>
+                <ColumnConstraints prefWidth="320" minWidth="200"/>
+            </columnConstraints>
+
+            <Label fx:id="multiChoiceLabel" style="-fx-font-weight: bold;" text="Oblíbené:" GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+            <ChoiceBox fx:id="favoriteChoiceBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label fx:id="multiCountGamesLabel" style="-fx-font-weight: bold;" text="Počet kusů:"
+                   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="countGames" maxWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Button fx:id="addButton" text="Přidat" onAction="#handleAddToCart"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                    maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </content>
+</ScrollPane>

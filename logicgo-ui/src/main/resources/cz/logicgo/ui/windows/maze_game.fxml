@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="900.0" prefWidth="1600.0" styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.gameControllers.gameControllers.MazeGameController">
+
+    <top>
+        <ToolBar fx:id="topToolbar" styleClass="game-toolbar" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <left>
+        <VBox alignment="CENTER" spacing="20.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="labelCurrentFloor" text="Patro: 1" visible="false" styleClass="game-info-label"/>
+                <Button fx:id="buttonFloorUp" onAction="#onFloorUpPressed" styleClass="btn-secondary" text="▲"
+                        visible="false"/>
+                <Button fx:id="buttonFloorDown" onAction="#onFloorDownPressed" styleClass="btn-secondary" text="▼"
+                        visible="false"/>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="gamePane" styleClass="canvas-pane" BorderPane.alignment="CENTER" onKeyPressed="#onKeyPressed"
+                   onKeyReleased="#onKeyReleased" onMouseClicked="#onMouseClicked" onMouseMoved="#onMouseMoved"
+                   onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased"
+                   style="-fx-background-color: transparent;">
+            <children>
+                <Canvas fx:id="primaryCanvas" height="800.0" width="800.0" onKeyPressed="#onKeyPressed"
+                        onKeyReleased="#onKeyReleased" onMouseClicked="#onMouseClicked" onMouseMoved="#onMouseMoved"
+                        onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased"/>
+                <Canvas fx:id="secondaryCanvas" height="800.0" width="800.0" onKeyPressed="#onKeyPressed"
+                        onKeyReleased="#onKeyReleased" onMouseClicked="#onMouseClicked" onMouseMoved="#onMouseMoved"
+                        onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased"/>
+            </children>
+        </StackPane>
+    </center>
+
+    <right>
+        <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="465.0"
+              prefWidth="234.0" spacing="30.0" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <Label fx:id="countdownTimer" styleClass="game-timer" text="00:00"/>
+                <Button fx:id="buttonPause" onAction="#onPauseButtonPressed" styleClass="btn-primary"/>
+
+                <VBox fx:id="patternPreviewBox" alignment="CENTER" spacing="10.0" visible="false">
+                    <Label text="Následuje vzor:" style="-fx-text-fill: #94A3B8; -fx-font-weight: bold;"/>
+                    <Canvas fx:id="patternCanvas" height="60.0" width="60.0"/>
+                </VBox>
+
+                <Label fx:id="labelModeInfo" styleClass="game-info-label" text="Zbývá dveří: 0" visible="false"/>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

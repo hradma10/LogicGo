@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="900.0" prefWidth="1600.0" styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.gameControllers.gameControllers.ShikakuGameController">
+
+    <top>
+        <ToolBar fx:id="topToolbar" styleClass="game-toolbar" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <StackPane fx:id="gamePane" styleClass="canvas-pane" BorderPane.alignment="CENTER"
+                   style="-fx-background-color: transparent;">
+            <children>
+                <Canvas fx:id="primaryCanvas" height="800.0" width="800.0"/>
+
+                <Canvas fx:id="secondaryCanvas" height="800.0" width="800.0"
+                        onMouseClicked="#onMouseClicked"
+                        onMousePressed="#onMousePressed"
+                        onMouseDragged="#onMouseDragged"
+                        onMouseReleased="#onMouseReleased"
+                        onMouseMoved="#onMouseMoved"
+                        onMouseExited="#onMouseExited"/>
+            </children>
+        </StackPane>
+    </center>
+
+    <right>
+        <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="465.0"
+              prefWidth="234.0" spacing="50.0" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <Label fx:id="countdownTimer" styleClass="game-timer" text="00:00"/>
+                <Button fx:id="buttonPause" onAction="#onPauseButtonPressed" styleClass="btn-primary"/>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

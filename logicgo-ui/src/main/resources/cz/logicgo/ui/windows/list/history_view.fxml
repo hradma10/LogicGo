@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="15.0" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.logicgo.ui.controllers.listControllers.ItemsViewController">
+
+    <HBox alignment="CENTER_LEFT" spacing="15">
+        <children>
+            <Label styleClass="title-label" style="-fx-font-size: 24px;" text="Historie her"/>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <Button mnemonicParsing="false" onAction="#onFilterButtonAction" styleClass="btn-secondary"
+                    text="Filtrovat"/>
+            <Button mnemonicParsing="false" onAction="#refresh" styleClass="btn-secondary" text="Aktualizovat"/>
+        </children>
+    </HBox>
+
+    <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+        <children>
+
+            <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <ListView fx:id="historyListView" VBox.vgrow="ALWAYS"/>
+                    <Pagination fx:id="pagination" maxPageIndicatorCount="5"/>
+                </children>
+            </VBox>
+
+            <VBox fx:id="filterSidebar" managed="false" prefWidth="280.0" spacing="15" visible="false"
+                  style="-fx-background-color: #2a2a2a; -fx-background-radius: 8; -fx-padding: 15;">
+                <children>
+                    <Label fx:id="labelTitle"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;"/>
+
+                    <GridPane hgap="10.0" vgap="12.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <children>
+                            <Label fx:id="labelGameType" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="0"/>
+                            <ChoiceBox fx:id="gameTypeChoiceBox" prefWidth="180" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="0"/>
+
+                            <Label fx:id="labelStatus" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
+                            <ChoiceBox fx:id="statusChoiceBox" prefWidth="180" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1"/>
+
+                            <Label fx:id="labelDifficulty" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="2"/>
+                            <ChoiceBox fx:id="difficultyChoiceBox" prefWidth="180" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="2"/>
+
+                            <Label fx:id="labelSort" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="3"/>
+                            <ChoiceBox fx:id="sortOptionsChoiceBox" prefWidth="180" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="3"/>
+
+                            <Label fx:id="labelDescending" style="-fx-font-weight: bold;" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="4"/>
+                            <CheckBox fx:id="sortCheckbox" mnemonicParsing="false" GridPane.columnIndex="1"
+                                      GridPane.rowIndex="4"/>
+                        </children>
+                    </GridPane>
+
+                    <VBox fx:id="dynamicFiltersContainer" spacing="15"/>
+
+                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#onClearFilterClick" styleClass="btn-secondary"
+                                    text="Vyčistit"/>
+                            <Button defaultButton="true" mnemonicParsing="false" onAction="#onApplyFilterClick"
+                                    styleClass="btn-primary" text="Použít"/>
+                        </children>
+                        <VBox.margin>
+                            <Insets top="10.0"/>
+                        </VBox.margin>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+    </HBox>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+</VBox>

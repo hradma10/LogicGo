@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane fitToWidth="true" fitToHeight="true"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cz.logicgo.ui.controllers.gameControllers.GameChoiceController"
+            styleClass="root-pane">
+    <content>
+        <VBox fx:id="content" spacing="20" styleClass="root-pane">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <children>
+                <VBox spacing="10" styleClass="register-card">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label text="Zadejte seed" styleClass="title-label" style="-fx-font-size: 18px;"/>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <children>
+                                <TextField fx:id="seedInputField"
+                                           promptText="Vložte seed (např. 1;2;7;9;32571594)"
+                                           HBox.hgrow="ALWAYS" styleClass="text-field"
+                                           style="-fx-font-size: 14px; -fx-padding: 8 12;"/>
+                                <Button fx:id="btnLaunchSeed" text="Spustit" onAction="#handleLaunchSeed"
+                                        styleClass="btn-primary" style="-fx-font-size: 14px; -fx-padding: 8 20;"/>
+                            </children>
+                        </HBox>
+                        <Label fx:id="seedErrorLabel" text="Neplatný seed!" visible="false" managed="false"
+                               style="-fx-text-fill: #EF4444; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" styleClass="register-card" fx:id="favoritesCard">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="labelFavorite" text="Oblíbené" styleClass="title-label"
+                               style="-fx-font-size: 18px;"/>
+                        <TilePane fx:id="favoritesTilePane" hgap="15" vgap="15" prefColumns="3"
+                                  tileAlignment="TOP_LEFT"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" styleClass="register-card">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="labelSudoku" text="game.menu.sudoku" styleClass="title-label"
+                               style="-fx-font-size: 18px;"/>
+                        <VBox fx:id="sudokuChoiceBox" spacing="15.0"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" styleClass="register-card">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="labelMaze" text="Maze" styleClass="title-label" style="-fx-font-size: 18px;"/>
+                        <VBox fx:id="mazeChoiceBox" spacing="15.0"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" styleClass="register-card">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="labelBridges" styleClass="title-label" style="-fx-font-size: 18px;"/>
+                        <VBox fx:id="bridgeChoiceBox" spacing="15.0"/>
+                    </children>
+                </VBox>
+                <VBox spacing="10" styleClass="register-card">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="labelShikaku" styleClass="title-label" style="-fx-font-size: 18px;"/>
+                        <VBox fx:id="shikakuChoiceBox" spacing="15.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
