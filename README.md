@@ -5,7 +5,7 @@ LogicGo je desktopová aplikace vytvořená v jazyce Java pro Windows určená k
 
 ## Ukázky z aplikace
 
-### Výběr her a správa seedů
+### Výběr her
 ![Výběr her](docs/images/game_choice_screen.png)
 
 ### Sudoku s kandidáty
